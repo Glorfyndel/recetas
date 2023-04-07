@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" logicalFilePath="db.changelog-master.xml" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <property name="now" value="now()" dbms="h2,postgresql"/>
+    <property name="varchar_text" value="text" dbms="postgresql"/>
+    <property name="varchar_text" value="varchar" dbms="h2"/>
+
+    <property name="int_array" value="integer[]" dbms="postgresql"/>
+    <property name="int_array" value="integer array[100]" dbms="h2"/>
+
+    <property name="json" value="text" dbms="postgresql"/>
+    <property name="json" value="varchar" dbms="h2"/>
+
+    <!-- outbox
+    <include file="/db/changelog/db.changelog-outbox-pub.xml" context="not-legacy"/>
+    -->
+
+    <include relativeToChangelogFile="true" file="db.changelog-1.0.xml" context="not-legacy"/>
+
+</databaseChangeLog>
